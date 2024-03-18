@@ -8,15 +8,15 @@ public class DamageScript : MonoBehaviour
 
 
 
-    //fonksiyon çalýþtýðýnda ekstra hasar ekler
+    //fonksiyon ï¿½alï¿½ï¿½tï¿½ï¿½ï¿½nda ekstra hasar ekler
     public void DamageBoost()
     {   //damage artar
-        if (Scene.Instance.State == 0)
+        if (MainCharacter.Instance.state == 0)
         {
             MainCharacter.Instance.ExtraDamage = ExtraDamage;
 
             //tur atlar
-            Scene.Instance.State = 1; 
+            MainCharacter.Instance.state = 1; 
         }
         
     }

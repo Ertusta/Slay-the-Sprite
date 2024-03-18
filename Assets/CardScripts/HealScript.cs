@@ -9,20 +9,20 @@ public class HealScript : MonoBehaviour
 
     public void HealBoost()
     {
-        if (Scene.Instance.State == 0)
+        if (MainCharacter.Instance.state == 0)
         {//can artar
             MainCharacter.Instance.Health += ExtraHeal;
 
-            //iyileþme maksimun caný geçemez
+            //iyileï¿½me maksimun canï¿½ geï¿½emez
             if (MainCharacter.Instance.Health > 100)
             {
                 MainCharacter.Instance.Health = 100;
             }
 
-            //can deðiþkenini günceller
+            //can deï¿½iï¿½kenini gï¿½nceller
             HealthText.text = MainCharacter.Instance.Health.ToString();
             //tur atlar
-            Scene.Instance.State = 1;
+            MainCharacter.Instance.state = 1;
         }
         
     }

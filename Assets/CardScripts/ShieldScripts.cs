@@ -5,18 +5,22 @@ using UnityEngine;
 public class ShieldScripts : MonoBehaviour
 {
     public float ExtraShield = 10;
+    public bool hasShield=false;
+
     public TMPro.TextMeshProUGUI ShieldText;
 
     public void ShieldBoost()
     {
         //kalkan artar
-        if (Scene.Instance.State == 0)
+        if (MainCharacter.Instance.state == 0)
         {
-            MainCharacter.Instance.Shield = 15;
+            MainCharacter.Instance.Shield = 10;
             ShieldText.text = ExtraShield.ToString();
 
             //tur atlar
-            Scene.Instance.State = 1;
+            MainCharacter.Instance.state = 1;
+
+            hasShield=true;
         }
         
 

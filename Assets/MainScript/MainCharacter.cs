@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class MainCharacter : MonoBehaviour
@@ -11,9 +13,15 @@ public class MainCharacter : MonoBehaviour
     public float Damage=10;
     public float ExtraDamage = 0;
 
+    
+
+    public float state=0;
+
+    
 
 
-    //Diðer objeler tarafýndan eriþmesi için 1
+
+    //Diï¿½er objeler tarafï¿½ndan eriï¿½mesi iï¿½in 1
     public static MainCharacter Instance;
 
 
@@ -23,26 +31,32 @@ public class MainCharacter : MonoBehaviour
 
     void Start()
     {
-        //Diðer objeler tarafýndan eriþmesi için 2
+        
+        //Diï¿½er objeler tarafï¿½ndan eriï¿½mesi iï¿½in 2
         Instance = this;
     }
 
-    //saldýrý animasyonu
+    //saldï¿½rï¿½ animasyonu
    public void Animation()
     {
         Animator.SetFloat("State", 1);
         Invoke("Stop", 1);
+        state=3;
+
+        
+        
     }
 
-    //ýdle a dönüþ
+    //ï¿½dle a dï¿½nï¿½ï¿½
     private void Stop() 
     {
 
         Animator.SetFloat("State", 0);
-        Scene.Instance.State = 3;
+        
+        
     }
 
-    //ölüm
+    //ï¿½lï¿½m
     private void Update()
     {
         if (Health < 1)
