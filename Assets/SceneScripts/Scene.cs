@@ -5,7 +5,7 @@ using UnityEngine;
 public class Scene : MonoBehaviour
 {
 
-    public float State = 0;
+    //public float State = 0;
     public float EnemyNumber = 0;
     public bool Stop=true;
 
@@ -19,7 +19,7 @@ public class Scene : MonoBehaviour
 
     public TMPro.TextMeshProUGUI HealthText;
 
-    //dýþardan eriþmek içim
+    //dï¿½ï¿½ardan eriï¿½mek iï¿½im
     private void Start()
     {
         Instance = this;
@@ -28,7 +28,7 @@ public class Scene : MonoBehaviour
     private void Update()
     {
         //ilk iskelet hareket eder
-        if (State==3 &&Stop)
+        if (MainCharacter.Instance.state==3 &&Stop)
         {
             Animator1.SetFloat("State", 1);
             Invoke("SecondSkeleton",1);
@@ -55,7 +55,7 @@ public class Scene : MonoBehaviour
     void SecondSkeletonStop()
     {
         Animator2.SetFloat("State",0 );
-        State = 0;
+        MainCharacter.Instance.state = 0;
         Stop= true;
         MainCharacter.Instance.Health -= 10*EnemyNumber;
         HealthText.text = MainCharacter.Instance.Health.ToString();

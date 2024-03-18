@@ -14,22 +14,39 @@ public class SkeletonScript : MonoBehaviour
     
     public void TakingDamage()
     {
-        if (Scene.Instance.State == 1)
+        
+
+        if(MainCharacter.Instance.state==0)
+        {
+            Health-=MainCharacter.Instance.Damage;
+            HealthText.text = Health.ToString();
+
+            MainCharacter.Instance.state=2;
+
+            if (Health < 1)
+            {
+                gameObject.SetActive(false);
+                Scene.Instance.EnemyNumber -= 1;
+            }
+
+
+        }
+        if (MainCharacter.Instance.state == 1)
         {
 
             //hasar alma
-             Health -=MainCharacter.Instance.Damage+ MainCharacter.Instance.ExtraDamage;
-             HealthText.text = Health.ToString();
+            Health -=MainCharacter.Instance.Damage+ MainCharacter.Instance.ExtraDamage;
+            HealthText.text = Health.ToString();
 
             //tur atlama
-            Scene.Instance.State = 2;
+            MainCharacter.Instance.state = 2;
 
-            //ölme
+            //ï¿½lme
             if (Health < 1)
-             {
-                 gameObject.SetActive(false);
+            {
+                gameObject.SetActive(false);
                 Scene.Instance.EnemyNumber -= 1;
-             }
+            }
 
             
         }

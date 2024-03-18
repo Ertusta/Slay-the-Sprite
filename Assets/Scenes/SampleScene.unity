@@ -1039,6 +1039,7 @@ MonoBehaviour:
   Level: 0
   Damage: 10
   ExtraDamage: 0
+  state: 0
   Animator: {fileID: 737742420}
 --- !u!1 &792600139
 GameObject:
@@ -2244,7 +2245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d36b881f4919245b2b26b157d2148f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  State: 0
   EnemyNumber: 2
   Stop: 1
   Enemy1: {fileID: 1415478282}
